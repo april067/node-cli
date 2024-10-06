@@ -19,13 +19,9 @@ async function removeContact(contactId) {
 	const contacts = await listContacts();
 }
 
-async function addContact(name, email, phone) {
-	// ...твій код. Повертає об'єкт доданого контакту (з id).
-}
+async function addContact(name, email, phone) {}
 
-async function updateContact(contactId, name, email, phone) {
-	// ...твій код. Повертає об'єкт доданого контакту (з id).
-}
+async function updateContact(contactId, name, email, phone) {}
 
 module.exports = {
 	listContacts,
