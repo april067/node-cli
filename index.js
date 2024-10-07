@@ -3,7 +3,7 @@ const {
 	getContactById,
 	removeContact,
 	addContact,
-	updateContact,
+	updateContactById,
 } = require('./contacts');
 
 const { program } = require('commander');
@@ -29,7 +29,7 @@ async function invokeAction({ action, id, name, email, phone }) {
 			break;
 
 		case 'add':
-			console.log(await addContact(name, email, phone));
+			console.log(await addContact({ name, email, phone }));
 			break;
 
 		case 'remove':
@@ -37,7 +37,7 @@ async function invokeAction({ action, id, name, email, phone }) {
 			break;
 
 		case 'update':
-			console.log(await updateContact(id, name, email, phone));
+			console.log(await updateContactById(id, { name, email, phone }));
 			break;
 
 		default:
@@ -46,3 +46,13 @@ async function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(options);
+
+// === for testing ===
+
+// invokeAction({
+// 	action: 'update',
+// 	id: 'ade87501-2403-4a1f-a307-609038d45801',
+// 	name: 'Mango',
+// 	email: 'mango@gmail.com',
+// 	phone: '777-77-33',
+// });
